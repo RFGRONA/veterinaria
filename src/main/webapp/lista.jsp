@@ -79,7 +79,7 @@
                     <td><%= animal.getRaza()%></td>
                     <td><%= animal.getColor()%></td>
                     <td><%= animal.getEdad()%></td>
-                    <td><%= animal.getEnfermedad()%></td>
+                    <td><%= animal.getEnfermedad() ? "Si" : "No" %></td>
                     <td><form action="Servlet" method="post">
                         <input type="hidden" name="instruccion" value="eliminar">
                         <input type="hidden" name="eliminar" value="gato">
