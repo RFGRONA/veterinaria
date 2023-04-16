@@ -10,6 +10,15 @@ package ed.veterinaria.model;
  */
 public class Felinos extends Mascota {
     private boolean enfermedad; 
+
+    public Felinos() {
+    }
+
+    public Felinos(boolean enfermedad, String nombre, String color, double edad, String raza) {
+        super(nombre, color, edad, raza);
+        this.enfermedad = enfermedad;
+    }
+    
     
     public boolean isEnfermedad() {
         return enfermedad;
