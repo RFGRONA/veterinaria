@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ed.veterinaria.model;
 
-/**
- *
- * @author zarat
- */
-public class Felinos extends Mascota {
-    private boolean enfermedad; 
+import java.util.ArrayList;
+import java.util.List;
+
+public class Felinos extends Mascota implements Calculo{
+    private boolean enfermedad;
+    private boolean listaCreada = false;
+    private List<Felinos> felinos = new ArrayList<>();
 
     public Felinos() {
     }
@@ -19,8 +16,27 @@ public class Felinos extends Mascota {
         this.enfermedad = enfermedad;
     }
     
+    public List<Felinos> getFelinos(){
+        return felinos;
+    }
+    public void setFelinos(Felinos felino){
+        this.felinos.add(felino);
+    }
     
-    public boolean isEnfermedad() {
+    public List<Felinos> delFelinos(int i){
+        felinos.remove(i);
+        return felinos;
+    }
+    
+    public void inicializar(){
+        if (felinos.isEmpty() && listaCreada==false){
+            felinos.add(new Felinos(false, "Michi", "Blanco", 3, "Siamés"));
+            felinos.add(new Felinos(true, "Tiara", "Gris", 3, "Ruso azul"));
+            listaCreada=true;
+        }
+    }
+
+    public boolean getEnfermedad() {
         return enfermedad;
     }
 
@@ -28,5 +44,15 @@ public class Felinos extends Mascota {
         this.enfermedad = enfermedad;
     }
     
-    
+    @Override
+    public double calculo(){
+        double promedio = felinos.size();
+        double edad = 0;
+        double total;
+        for (Felinos felino : felinos) {
+            edad += felino.getEdad();
+        }
+        total = Math.round( edad/promedio * 100d) / 100d;
+        return total;
+    }
 }

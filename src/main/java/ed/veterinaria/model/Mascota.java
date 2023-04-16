@@ -1,14 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ed.veterinaria.model;
 
-/**
- *
- * @author zarat
- */
-public abstract class Mascota implements Calculo{
+public abstract class Mascota{
     private String nombre;
     private String color;
     private double edad;
@@ -54,11 +46,6 @@ public abstract class Mascota implements Calculo{
 
     public void setRaza(String raza) {
         this.raza = raza;
-    }
-
-    @Override
-    public double calculo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
