@@ -50,12 +50,105 @@
     font-size: 1.5em;
 }
 
+.botonlista {
+    width: 2em;
+    height: 2em;
+    border: 3px solid #8a30ff;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.botonlista:hover {
+    background: #8a30ff;
+    color: white;
+    font-size: 1.1em;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.centro {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.centro button {
+    width: 230px;
+    height: 60px;
+    border: 3px solid #8a30ff;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.centro button:hover {
+    background: #8a30ff;
+    color: white;
+    font-size: 1.5em;
+}
+
 h1 {
     font-size: 64px;
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(270deg, #8a30ff, #470070);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    background:#470070;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 a{
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    background:#8a30ff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tabla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    justify-items: center;
+}
+
+.tabla table {
+    border: 2px solid #8a30ff;
+    border-radius: 2px;
+    border-collapse: collapse;
+    padding: 10px;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    table-layout: auto;
+}
+
+
+.tabka table th, table td {
+    border: 1px solid #8a30ff;
+}
+
+.tabla table tr td {
+    border: 2px solid #8a30ff;
+    text-align: center;
+    padding: 5px;
 }
 
 .input-style {

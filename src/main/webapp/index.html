@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="container"><h1>Veterinaria</h1></header>
+    <header class="titulo"><h1><i class="fa-solid fa-shield-dog"></i> Veterinaria <i class="fa-solid fa-shield-cat"></i></h1></header>
     <div class="container">
         <form action="Servlet" method="POST">
             <input type="hidden" name="instruccion" value="agregar">
@@ -60,7 +60,7 @@
                 <input class="slider" type="range" id="nivel_entrenamiento" name="entrenamiento" min="1" max="10" step="1" oninput="mostrarValorRango(this.value)"><br>
             </div>
         </div>
-        <br>
+        <br><br>
         <div class="botones">
             <button type="submit" id="derecha"> <i class="fa-regular fa-paper-plane"></i> Enviar  </button>
         </form>

@@ -11,17 +11,19 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://kit.fontawesome.com/fc3ff67d7b.js" crossorigin="anonymous"></script>
         <link href="design.css" rel="stylesheet" type="text/css"/>
-        <title>JSP Page</title>
+        <title>Lista</title>
     </head>
     <body>
-        <h1>Lista</h1>
-
-        <table>
+        <h1 class="titulo"><i class="fa-solid fa-list"></i> Lista de mascotas</h1>
+        <% double promPerros = (Double) request.getAttribute("promPerros");
+        double promGatos = (Double) request.getAttribute("promGatos");%>
+        <div class="tabla">
+        <table >
             <thead>
                 <tr>
                     <th>N°</th>
@@ -48,7 +50,7 @@
                         <input type="hidden" name="instruccion" value="eliminar">
                         <input type="hidden" name="eliminar" value="perro">
                         <input type="hidden" name="indice" value="<%=contPerro%>">
-                        <button type="submit"><i class="fa-regular fa-trash-can"></i></button>
+                        <button class="botonlista" type="submit"><i class="fa-regular fa-trash-can"></i></button>
                     </form></td>
                 </tr>
                 <% contPerro++; numPerro++;}%>
@@ -82,19 +84,20 @@
                         <input type="hidden" name="instruccion" value="eliminar">
                         <input type="hidden" name="eliminar" value="gato">
                         <input type="hidden" name="indice" value="<%=contGato%>">
-                        <button type="submit"><i class="fa-regular fa-trash-can"></i></button>
+                        <button class="botonlista" type="submit"><i class="fa-regular fa-trash-can"></i></button>
                     </form></td>
                 </tr>
                 <% contGato++; numGato++;}%>
             </tbody>
         </table>
-        <% double promPerros = (Double) request.getAttribute("promPerros");
-        double promGatos = (Double) request.getAttribute("promGatos");%>
-            <p>Promedio de edad:</p>
-            <p>Perros: <%=promPerros%></p>
-            <p>Gatos: <%=promGatos%></p><br>
-        <form action="index.html">
+
+        <h2>Promedio de edad: <a><%=promPerros%></a></h2>
+        <h2>Promedio de edad <a><%=promGatos%></a></h2>
+        </div>
+        
+        <form action="index.html" class="centro">
             <button type="submit"><i class="fa-solid fa-rotate-left"></i> Volver a inicio</button>
         </form>
+        
     </body>
 </html>
