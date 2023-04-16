@@ -21,10 +21,9 @@ public class Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         caninos.inicializar();
         felinos.inicializar();
-        calculo(request, response);
         request.setAttribute("perros", caninos.getCaninos());
         request.setAttribute("gatos", felinos.getFelinos());
-        request.getRequestDispatcher("lista.jsp").forward(request, response);
+        calculo(request, response);
     }
 
     @Override
@@ -32,11 +31,11 @@ public class Servlet extends HttpServlet {
         caninos.inicializar();
         felinos.inicializar();
         String instruccion = request.getParameter("instruccion");
-        calculo(request, response);
         if(instruccion.equals("agregar"))
             agregar(request, response);
         if(instruccion.equals("eliminar"))
             eliminar(request, response);
+        calculo(request, response);
     }
 
     protected void agregar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +58,6 @@ public class Servlet extends HttpServlet {
         
         request.setAttribute("perros", caninos.getCaninos());
         request.setAttribute("gatos", felinos.getFelinos());
-        request.getRequestDispatcher("lista.jsp").forward(request, response);
     }
     
     protected void eliminar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -75,11 +73,11 @@ public class Servlet extends HttpServlet {
 
         request.setAttribute("perros", caninos.getCaninos());
         request.setAttribute("gatos", felinos.getFelinos());
-        request.getRequestDispatcher("lista.jsp").forward(request, response);
     }
     
     protected void calculo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("promPerros", caninos.calculo());
         request.setAttribute("promGatos", felinos.calculo());
+        request.getRequestDispatcher("lista.jsp").forward(request, response);
     }
 }

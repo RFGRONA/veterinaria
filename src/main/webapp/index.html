@@ -57,7 +57,7 @@
 
             <div id="datos_perro" style="display: none;">
                 <label for="nivel_entrenamiento">Nivel de entrenamiento: <span id="valor_e"></span> </label><br>
-                <input type="range" id="nivel_entrenamiento" name="entrenamiento" min="1" max="10" step="1" oninput="mostrarValorRango(this.value)"><br>
+                <input class="slider" type="range" id="nivel_entrenamiento" name="entrenamiento" min="1" max="10" step="1" oninput="mostrarValorRango(this.value)"><br>
             </div>
         </div>
         <br>
@@ -67,7 +67,6 @@
         <form action="Servlet" method="get"><button type="submit" id="izquierda"> <i class="fa-solid fa-list"></i> Mostrar </button></form>
         </div>
 
-    
 </body>
 
 </html>
