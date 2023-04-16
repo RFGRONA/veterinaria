@@ -18,16 +18,16 @@
         <form action="Servlet" method="POST">
             <input type="hidden" name="instruccion" value="agregar">
             <label for="nombre"> Nombre:</label><br>
-            <input class="input-style" type="text" id="nombre" name="nombre"><br>
+            <input class="input-style" type="text" id="nombre" name="nombre" required><br>
 
             <label for="raza">Raza:</label><br>
-            <input class="input-style" type="text" id="raza" name="raza"><br>
+            <input class="input-style" type="text" id="raza" name="raza" required><br>
 
             <label for="color">Color:</label><br>
-            <input class="input-style" type="text" id="color" name="color"><br>
+            <input class="input-style" type="text" id="color" name="color" required><br>
 
             <label for="edad">Edad:</label><br>
-            <input class="input-style" type="number" id="edad" name="edad"><br>
+            <input class="input-style" type="number" id="edad" name="edad" min="0"  required><br>
             
             <div class="selectdiv">
                 <label>Tipo de animal:</label><br>
