@@ -122,6 +122,14 @@ h2 a{
     -webkit-text-fill-color: transparent;
 }
 
+h3 {
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    background:#470070;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .tabla {
     display: grid;
     grid-template-columns: 1fr 1fr;

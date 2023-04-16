@@ -24,6 +24,7 @@
         double promGatos = (Double) request.getAttribute("promGatos");%>
         <div class="tabla">
         <table >
+            <caption><h3> <i class="fa-solid fa-shield-dog"></i> Lista Perros</h3></caption>
             <thead>
                 <tr>
                     <th>N°</th>
@@ -58,6 +59,7 @@
         </table>
             
         <table>
+            <caption><h3> <i class="fa-solid fa-shield-cat"></i> Lista Gatos</h3></caption>
             <thead>
                 <tr>
                     <th>N°</th>
