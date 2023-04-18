@@ -2,6 +2,7 @@ package ed.veterinaria.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Felinos extends Mascota implements Calculo{
     private boolean enfermedad;
@@ -19,21 +20,26 @@ public class Felinos extends Mascota implements Calculo{
     public List<Felinos> getFelinos(){
         return felinos;
     }
-    public void setFelinos(Felinos felino){
-        this.felinos.add(felino);
+    
+    @Override
+    public boolean equals(Object o) {
+        Felinos felino = (Felinos) o;
+        return enfermedad == felino.enfermedad
+                && Double.compare(felino.getEdad(), getEdad()) == 0
+                && Objects.equals(getNombre(), felino.getNombre())
+                && Objects.equals(getColor(), felino.getColor())
+                && Objects.equals(getRaza(), felino.getRaza());
+    }
+
+    public void setFelinos(Felinos felino) {
+        if (!this.felinos.contains(felino)) {
+            this.felinos.add(felino);
+        }
     }
     
     public List<Felinos> delFelinos(int i){
         felinos.remove(i);
         return felinos;
-    }
-    
-    public void inicializar(){
-        if (felinos.isEmpty() && listaCreada==false){
-            felinos.add(new Felinos(false, "Michi", "Blanco", 3, "Siamés"));
-            felinos.add(new Felinos(true, "Tiara", "Gris", 3, "Ruso azul"));
-            listaCreada=true;
-        }
     }
 
     public boolean getEnfermedad() {
@@ -42,6 +48,15 @@ public class Felinos extends Mascota implements Calculo{
 
     public void setEnfermedad(boolean enfermedad) {
         this.enfermedad = enfermedad;
+    }
+    
+    @Override
+    public void inicializar(){
+        if (felinos.isEmpty() && listaCreada==false){
+            felinos.add(new Felinos(false, "Michi", "Blanco", 3, "Siamés"));
+            felinos.add(new Felinos(true, "Tiara", "Gris", 3, "Ruso azul"));
+            listaCreada=true;
+        }
     }
     
     @Override

@@ -48,4 +48,5 @@ public abstract class Mascota{
         this.raza = raza;
     }
     
+    public abstract void inicializar();
 }
