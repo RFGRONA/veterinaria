@@ -4,27 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Caninos extends Mascota implements Calculo {
+public class Caninos extends Mascota implements Listas<Caninos> {
 
     private int entrenamiento;
     private boolean listaCreada = false;
-    private List<Caninos> caninos = new ArrayList<>();
+    private final List<Caninos> caninos;
 
     public Caninos() {
+        this.caninos = new ArrayList<>();
     }
 
     public Caninos(int entrenamiento, String nombre, String color, double edad, String raza) {
         super(nombre, color, edad, raza);
+        this.caninos = new ArrayList<>();
         this.entrenamiento = entrenamiento;
     }
-
-    public List<Caninos> getCaninos() {
-        return caninos;
+    
+    public int getEntrenamiento() {
+        return entrenamiento;
     }
 
-    public List<Caninos> delCaninos(int i) {
-        caninos.remove(i);
-        return caninos;
+    public void setEntrenamiento(int entrenamiento) {
+        this.entrenamiento = entrenamiento;
     }
 
     @Override
@@ -36,19 +37,23 @@ public class Caninos extends Mascota implements Calculo {
                 && Objects.equals(getColor(), canino.getColor())
                 && Objects.equals(getRaza(), canino.getRaza());
     }
+    
+    @Override
+    public List<Caninos> getLista() {
+        return caninos;
+    }
 
-    public void setCaninos(Caninos canino) {
+    @Override
+    public void setLista(Caninos canino) {
         if (!this.caninos.contains(canino)) {
             this.caninos.add(canino);
         }
     }
 
-    public int getEntrenamiento() {
-        return entrenamiento;
-    }
-
-    public void setEntrenamiento(int entrenamiento) {
-        this.entrenamiento = entrenamiento;
+    @Override
+    public List<Caninos> delLista(int indice) {
+        caninos.remove(indice);
+        return caninos;
     }
     
     @Override

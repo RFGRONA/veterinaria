@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Servlet extends HttpServlet {
 
-    private Felinos felinos = new Felinos();
-    private Caninos caninos = new Caninos();
+    private final Felinos felinos = new Felinos();
+    private final Caninos caninos = new Caninos();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -21,8 +21,8 @@ public class Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         caninos.inicializar();
         felinos.inicializar();
-        request.setAttribute("perros", caninos.getCaninos());
-        request.setAttribute("gatos", felinos.getFelinos());
+        request.setAttribute("perros", caninos.getLista());
+        request.setAttribute("gatos", felinos.getLista());
         calculo(request, response);
     }
 
@@ -50,14 +50,14 @@ public class Servlet extends HttpServlet {
 
         if (tipo.equals("perro")) {
             Caninos perro = new Caninos(entrenamiento, nombre, color, edad, raza);
-            caninos.setCaninos(perro);
+            caninos.setLista(perro);
         } else {
             Felinos gato = new Felinos(enfermedad, nombre, color, edad, raza);
-            felinos.setFelinos(gato);
+            felinos.setLista(gato);
         }
         
-        request.setAttribute("perros", caninos.getCaninos());
-        request.setAttribute("gatos", felinos.getFelinos());
+        request.setAttribute("perros", caninos.getLista());
+        request.setAttribute("gatos", felinos.getLista());
     }
     
     protected void eliminar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -66,13 +66,13 @@ public class Servlet extends HttpServlet {
         int indice = Integer.parseInt(request.getParameter("indice"));
         
         if (eliminar.equals("perro")) {
-            caninos.delCaninos(indice);
+            caninos.delLista(indice);
         } else {
-            felinos.delFelinos(indice);
+            felinos.delLista(indice);
         }
 
-        request.setAttribute("perros", caninos.getCaninos());
-        request.setAttribute("gatos", felinos.getFelinos());
+        request.setAttribute("perros", caninos.getLista());
+        request.setAttribute("gatos", felinos.getLista());
     }
     
     protected void calculo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

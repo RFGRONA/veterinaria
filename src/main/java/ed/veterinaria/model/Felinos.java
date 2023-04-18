@@ -4,21 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Felinos extends Mascota implements Calculo{
+public class Felinos extends Mascota implements Listas<Felinos>{
+    
     private boolean enfermedad;
     private boolean listaCreada = false;
-    private List<Felinos> felinos = new ArrayList<>();
+    private final List<Felinos> felinos;
 
     public Felinos() {
+        this.felinos = new ArrayList<>();
     }
 
     public Felinos(boolean enfermedad, String nombre, String color, double edad, String raza) {
         super(nombre, color, edad, raza);
+        this.felinos = new ArrayList<>();
         this.enfermedad = enfermedad;
     }
     
-    public List<Felinos> getFelinos(){
-        return felinos;
+    public boolean getEnfermedad() {
+        return enfermedad;
+    }
+
+    public void setEnfermedad(boolean enfermedad) {
+        this.enfermedad = enfermedad;
     }
     
     @Override
@@ -30,24 +37,23 @@ public class Felinos extends Mascota implements Calculo{
                 && Objects.equals(getColor(), felino.getColor())
                 && Objects.equals(getRaza(), felino.getRaza());
     }
-
-    public void setFelinos(Felinos felino) {
+    
+    @Override
+    public List<Felinos> getLista(){
+        return felinos;
+    }
+    
+    @Override
+    public void setLista(Felinos felino) {
         if (!this.felinos.contains(felino)) {
             this.felinos.add(felino);
         }
     }
-    
-    public List<Felinos> delFelinos(int i){
-        felinos.remove(i);
+
+    @Override
+    public List<Felinos> delLista(int indice) {
+        felinos.remove(indice);
         return felinos;
-    }
-
-    public boolean getEnfermedad() {
-        return enfermedad;
-    }
-
-    public void setEnfermedad(boolean enfermedad) {
-        this.enfermedad = enfermedad;
     }
     
     @Override
@@ -70,4 +76,5 @@ public class Felinos extends Mascota implements Calculo{
         total = Math.round( edad/promedio * 100d) / 100d;
         return total;
     }
+    
 }

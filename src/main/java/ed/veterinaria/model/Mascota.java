@@ -6,6 +6,9 @@ public abstract class Mascota{
     private double edad;
     private String raza;
     
+    public abstract void inicializar();
+    public abstract double calculo();
+    
     public Mascota(){
     }
 
@@ -47,6 +50,4 @@ public abstract class Mascota{
     public void setRaza(String raza) {
         this.raza = raza;
     }
-    
-    public abstract void inicializar();
 }
