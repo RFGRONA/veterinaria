@@ -14,9 +14,9 @@ Un sitio de rescate, rehabilitación y adopción de mascotas desea controlar y l
 Se debe permitir consultar las mascotas disponibles y retirar la que sea seleccionada. Se debe también mostrar la edad promedio de todas las mascotas y la cantidad total almacenada de felinos y la cantidad total de caninos.
 
 ### Diagrama de clases
-![Diagrama de clases. Relación entre las clases.]()
+![Diagrama de clases. Relación entre las clases.](https://github.com/Tnorvy/veterinaria/blob/master/diagramas/diagramadeclases.png)
 
 ### Diagrama casos de uso
-![Diagrama de casos de uso. Interacción del usuario con el sistema.]()
+![Diagrama de casos de uso. Interacción del usuario con el sistema.](https://github.com/Tnorvy/veterinaria/blob/master/diagramas/casosdeuso.png)
 
 ##### Universidad de Cundinamarca - Extensión Facatativá - Programación 2
